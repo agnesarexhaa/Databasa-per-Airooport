@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.35431.46
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F14B399A-7131-4C87-9E4B-1186C45EF12D}") = "SSRS_ABB", "SSRS_ABB\SSRS_ABB.rptproj", "{991FEF70-45D2-4708-8F6E-C0865A75FF95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		DebugLocal|Default = DebugLocal|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{991FEF70-45D2-4708-8F6E-C0865A75FF95}.Debug|Default.ActiveCfg = Debug
+		{991FEF70-45D2-4708-8F6E-C0865A75FF95}.Debug|Default.Build.0 = Debug
+		{991FEF70-45D2-4708-8F6E-C0865A75FF95}.Debug|Default.Deploy.0 = Debug
+		{991FEF70-45D2-4708-8F6E-C0865A75FF95}.DebugLocal|Default.ActiveCfg = DebugLocal
+		{991FEF70-45D2-4708-8F6E-C0865A75FF95}.DebugLocal|Default.Build.0 = DebugLocal
+		{991FEF70-45D2-4708-8F6E-C0865A75FF95}.Release|Default.ActiveCfg = Release
+		{991FEF70-45D2-4708-8F6E-C0865A75FF95}.Release|Default.Build.0 = Release
+		{991FEF70-45D2-4708-8F6E-C0865A75FF95}.Release|Default.Deploy.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F2BE74F-92A6-4229-8E9D-3E4E5F0A933D}
+	EndGlobalSection
+EndGlobal

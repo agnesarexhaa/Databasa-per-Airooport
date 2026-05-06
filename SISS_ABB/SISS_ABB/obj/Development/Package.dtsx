@@ -1,0 +1,1654 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/1/2025 10:57:14 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-P1O6CIR"
+  DTS:CreatorName="DESKTOP-P1O6CIR\FT TECH"
+  DTS:DTSID="{408A70CA-1351-48EC-B095-A67E591CAD00}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.180"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Package"
+  DTS:PackageType="5"
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{D2DF77DA-C932-475D-8210-549B331AF044}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-P1O6CIR.ABB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E8FF4F80-C327-4269-A1C9-CD1F38BFA001}"
+      DTS:ObjectName="DESKTOP-P1O6CIR.ABB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=DESKTOP-P1O6CIR;Initial Catalog=ABB;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{E8FF4F80-C327-4269-A1C9-CD1F38BFA001}DESKTOP-P1O6CIR.ABB;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SSISPaketa"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{DEB02B4F-FDCC-4DCF-8384-D0427CE1334B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SSISPaketa"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\SSISPaketa\Aeroportet_abb"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Aeroportet_abb"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT id_abb, Aeroporti_abb, LinjaAjrore_abb, CmimiBiletes_abb, idFluturimi_abb
+FROM Aeroportet_abb
+ORDER BY id_abb</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SSISPaketa\Aeroportet_abb.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-P1O6CIR.ABB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-P1O6CIR.ABB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[id_abb]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].ExternalColumns[id_abb]"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[id_abb]"
+                      name="id_abb"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[Aeroporti_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].ExternalColumns[Aeroporti_abb]"
+                      length="30"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[Aeroporti_abb]"
+                      name="Aeroporti_abb"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[LinjaAjrore_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].ExternalColumns[LinjaAjrore_abb]"
+                      length="30"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[LinjaAjrore_abb]"
+                      name="LinjaAjrore_abb"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[CmimiBiletes_abb]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].ExternalColumns[CmimiBiletes_abb]"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[CmimiBiletes_abb]"
+                      name="CmimiBiletes_abb"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[idFluturimi_abb]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].ExternalColumns[idFluturimi_abb]"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[idFluturimi_abb]"
+                      name="idFluturimi_abb"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].ExternalColumns[id_abb]"
+                      dataType="i4"
+                      name="id_abb" />
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].ExternalColumns[Aeroporti_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Aeroporti_abb" />
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].ExternalColumns[LinjaAjrore_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="LinjaAjrore_abb" />
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].ExternalColumns[CmimiBiletes_abb]"
+                      dataType="i4"
+                      name="CmimiBiletes_abb" />
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].ExternalColumns[idFluturimi_abb]"
+                      dataType="i4"
+                      name="idFluturimi_abb" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  isSorted="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output].Columns[id_abb]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output].Columns[id_abb]"
+                      name="id_abb"
+                      sortKeyPosition="1" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output].Columns[Aeroporti_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output].Columns[Aeroporti_abb]"
+                      name="Aeroporti_abb" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output].Columns[LinjaAjrore_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output].Columns[LinjaAjrore_abb]"
+                      name="LinjaAjrore_abb" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output].Columns[CmimiBiletes_abb]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output].Columns[CmimiBiletes_abb]"
+                      name="CmimiBiletes_abb" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output].Columns[idFluturimi_abb]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output].Columns[idFluturimi_abb]"
+                      name="idFluturimi_abb" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SSISPaketa\Aeroportet_abb_NEW"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="Aeroportet_abb_NEW"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT id_abb, Aeroporti_abb, LinjaAjrore_abb, CmimiBiletes_abb, idFluturimi_abb
+FROM Aeroportet_abb_NEW
+ORDER BY id_abb</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SSISPaketa\Aeroportet_abb_NEW.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-P1O6CIR.ABB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-P1O6CIR.ABB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output]"
+                  isSorted="true"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[id_abb]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].ExternalColumns[id_abb]"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[id_abb]"
+                      name="id_abb"
+                      sortKeyPosition="1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[Aeroporti_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].ExternalColumns[Aeroporti_abb]"
+                      length="255"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[Aeroporti_abb]"
+                      name="Aeroporti_abb"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[LinjaAjrore_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].ExternalColumns[LinjaAjrore_abb]"
+                      length="255"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[LinjaAjrore_abb]"
+                      name="LinjaAjrore_abb"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[CmimiBiletes_abb]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].ExternalColumns[CmimiBiletes_abb]"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[CmimiBiletes_abb]"
+                      name="CmimiBiletes_abb"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[idFluturimi_abb]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].ExternalColumns[idFluturimi_abb]"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[idFluturimi_abb]"
+                      name="idFluturimi_abb"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].ExternalColumns[id_abb]"
+                      dataType="i4"
+                      name="id_abb" />
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].ExternalColumns[Aeroporti_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Aeroporti_abb" />
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].ExternalColumns[LinjaAjrore_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="LinjaAjrore_abb" />
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].ExternalColumns[CmimiBiletes_abb]"
+                      dataType="i4"
+                      name="CmimiBiletes_abb" />
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].ExternalColumns[idFluturimi_abb]"
+                      dataType="i4"
+                      name="idFluturimi_abb" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  isSorted="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output].Columns[id_abb]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output].Columns[id_abb]"
+                      name="id_abb"
+                      sortKeyPosition="1" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output].Columns[Aeroporti_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output].Columns[Aeroporti_abb]"
+                      name="Aeroporti_abb" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output].Columns[LinjaAjrore_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output].Columns[LinjaAjrore_abb]"
+                      name="LinjaAjrore_abb" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output].Columns[CmimiBiletes_abb]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output].Columns[CmimiBiletes_abb]"
+                      name="CmimiBiletes_abb" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output].Columns[idFluturimi_abb]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output].Columns[idFluturimi_abb]"
+                      name="idFluturimi_abb" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SSISPaketa\Bashko"
+              componentClassID="Microsoft.MergeJoin"
+              contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
+              name="Bashko"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the type of join to perform."
+                  name="JoinType"
+                  typeConverter="JoinType">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the number of columns in the ordering key."
+                  name="NumKeyColumns">1</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the null values are treated as equal values."
+                  name="TreatNullsAsEqual">true</property>
+                <property
+                  dataType="System.Int32"
+                  description="Indicates the requested maximum buffers per input before blocking."
+                  name="MaxBuffersPerInput">5</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\SSISPaketa\Bashko.Inputs[Merge Join Left Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Left Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SSISPaketa\Bashko.Inputs[Merge Join Left Input].Columns[id_abb]"
+                      cachedDataType="i4"
+                      cachedName="id_abb"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[id_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Bashko.Inputs[Merge Join Left Input].Columns[Aeroporti_abb]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Aeroporti_abb"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[Aeroporti_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Bashko.Inputs[Merge Join Left Input].Columns[LinjaAjrore_abb]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="LinjaAjrore_abb"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[LinjaAjrore_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Bashko.Inputs[Merge Join Left Input].Columns[CmimiBiletes_abb]"
+                      cachedDataType="i4"
+                      cachedName="CmimiBiletes_abb"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[CmimiBiletes_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Bashko.Inputs[Merge Join Left Input].Columns[idFluturimi_abb]"
+                      cachedDataType="i4"
+                      cachedName="idFluturimi_abb"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output].Columns[idFluturimi_abb]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\SSISPaketa\Bashko.Inputs[Merge Join Right Input]"
+                  hasSideEffects="true"
+                  name="Merge Join Right Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SSISPaketa\Bashko.Inputs[Merge Join Right Input].Columns[id_abb]"
+                      cachedDataType="i4"
+                      cachedName="id_abb"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[id_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Bashko.Inputs[Merge Join Right Input].Columns[Aeroporti_abb]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Aeroporti_abb"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[Aeroporti_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Bashko.Inputs[Merge Join Right Input].Columns[LinjaAjrore_abb]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="LinjaAjrore_abb"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[LinjaAjrore_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Bashko.Inputs[Merge Join Right Input].Columns[CmimiBiletes_abb]"
+                      cachedDataType="i4"
+                      cachedName="CmimiBiletes_abb"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[CmimiBiletes_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Bashko.Inputs[Merge Join Right Input].Columns[idFluturimi_abb]"
+                      cachedDataType="i4"
+                      cachedName="idFluturimi_abb"
+                      lineageId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output].Columns[idFluturimi_abb]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output]"
+                  isSorted="true"
+                  name="Merge Join Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb]"
+                      name="id_abb"
+                      sortKeyPosition="1">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\SSISPaketa\Bashko.Inputs[Merge Join Left Input].Columns[id_abb]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb (1)]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb (1)]"
+                      name="id_abb (1)">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\SSISPaketa\Bashko.Inputs[Merge Join Right Input].Columns[id_abb]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[Aeroporti_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[Aeroporti_abb]"
+                      name="Aeroporti_abb">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\SSISPaketa\Bashko.Inputs[Merge Join Left Input].Columns[Aeroporti_abb]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[Aeroporti_abb (1)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[Aeroporti_abb (1)]"
+                      name="Aeroporti_abb (1)">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\SSISPaketa\Bashko.Inputs[Merge Join Right Input].Columns[Aeroporti_abb]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[LinjaAjrore_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[LinjaAjrore_abb]"
+                      name="LinjaAjrore_abb">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\SSISPaketa\Bashko.Inputs[Merge Join Left Input].Columns[LinjaAjrore_abb]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[LinjaAjrore_abb (1)]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[LinjaAjrore_abb (1)]"
+                      name="LinjaAjrore_abb (1)">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\SSISPaketa\Bashko.Inputs[Merge Join Right Input].Columns[LinjaAjrore_abb]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[CmimiBiletes_abb]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[CmimiBiletes_abb]"
+                      name="CmimiBiletes_abb">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\SSISPaketa\Bashko.Inputs[Merge Join Left Input].Columns[CmimiBiletes_abb]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[CmimiBiletes_abb (1)]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[CmimiBiletes_abb (1)]"
+                      name="CmimiBiletes_abb (1)">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\SSISPaketa\Bashko.Inputs[Merge Join Right Input].Columns[CmimiBiletes_abb]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[idFluturimi_abb]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[idFluturimi_abb]"
+                      name="idFluturimi_abb">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\SSISPaketa\Bashko.Inputs[Merge Join Left Input].Columns[idFluturimi_abb]}</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[idFluturimi_abb (1)]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[idFluturimi_abb (1)]"
+                      name="idFluturimi_abb (1)">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="The input column associated with this output column"
+                          name="InputColumnID">#{Package\SSISPaketa\Bashko.Inputs[Merge Join Right Input].Columns[idFluturimi_abb]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SSISPaketa\Fshi"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Fshi"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">DELETE FROM Aeroportet_abb_NEW WHERE id_abb=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SSISPaketa\Fshi.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-P1O6CIR.ABB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-P1O6CIR.ABB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SSISPaketa\Fshi.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SSISPaketa\Fshi.Inputs[OLE DB Command Input].Columns[id_abb (1)]"
+                      cachedDataType="i4"
+                      cachedName="id_abb (1)"
+                      externalMetadataColumnId="Package\SSISPaketa\Fshi.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb (1)]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Fshi.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="i4"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SSISPaketa\Fshi.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\SSISPaketa\Fshi.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SSISPaketa\Fshi.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\SSISPaketa\Fshi.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Fshi.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Fshi.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Fshi.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Fshi.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SSISPaketa\Kushtezimet"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Kushtezimet"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input].Columns[id_abb]"
+                      cachedDataType="i4"
+                      cachedName="id_abb"
+                      cachedSortKeyPosition="1"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input].Columns[id_abb (1)]"
+                      cachedDataType="i4"
+                      cachedName="id_abb (1)"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb (1)]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input].Columns[Aeroporti_abb]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Aeroporti_abb"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[Aeroporti_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input].Columns[Aeroporti_abb (1)]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Aeroporti_abb (1)"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[Aeroporti_abb (1)]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input].Columns[LinjaAjrore_abb]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="LinjaAjrore_abb"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[LinjaAjrore_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input].Columns[LinjaAjrore_abb (1)]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="LinjaAjrore_abb (1)"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[LinjaAjrore_abb (1)]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input].Columns[CmimiBiletes_abb]"
+                      cachedDataType="i4"
+                      cachedName="CmimiBiletes_abb"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[CmimiBiletes_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input].Columns[CmimiBiletes_abb (1)]"
+                      cachedDataType="i4"
+                      cachedName="CmimiBiletes_abb (1)"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[CmimiBiletes_abb (1)]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input].Columns[idFluturimi_abb]"
+                      cachedDataType="i4"
+                      cachedName="idFluturimi_abb"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[idFluturimi_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input].Columns[idFluturimi_abb (1)]"
+                      cachedDataType="i4"
+                      cachedName="idFluturimi_abb (1)"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[idFluturimi_abb (1)]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SSISPaketa\Kushtezimet.Outputs[E Re]"
+                  description="Output 2 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="E Re"
+                  synchronousInputId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">![ISNULL](#{Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb]}) &amp;&amp; [ISNULL](#{Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb (1)]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!ISNULL(id_abb) &amp;&amp; ISNULL([id_abb (1)])</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SSISPaketa\Kushtezimet.Outputs[Fshi]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Fshi"
+                  synchronousInputId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">[ISNULL](#{Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb]}) &amp;&amp; ![ISNULL](#{Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb (1)]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">ISNULL(id_abb) &amp;&amp; !ISNULL([id_abb (1)])</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">1</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SSISPaketa\Kushtezimet.Outputs[Perditeso]"
+                  description="Output 3 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Perditeso"
+                  synchronousInputId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">!(#{Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb]} == #{Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb (1)]}) || !(#{Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[Aeroporti_abb]} == #{Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[Aeroporti_abb (1)]}) || !(#{Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[LinjaAjrore_abb]} == #{Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[LinjaAjrore_abb (1)]}) || !(#{Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[CmimiBiletes_abb]} == #{Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[CmimiBiletes_abb (1)]}) || !(#{Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[idFluturimi_abb]} == #{Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[idFluturimi_abb (1)]})</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">!(id_abb == [id_abb (1)]) || !(Aeroporti_abb == [Aeroporti_abb (1)]) || !(LinjaAjrore_abb == [LinjaAjrore_abb (1)]) || !(CmimiBiletes_abb == [CmimiBiletes_abb (1)]) || !(idFluturimi_abb == [idFluturimi_abb (1)])</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">2</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SSISPaketa\Kushtezimet.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SSISPaketa\Kushtezimet.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Kushtezimet.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Kushtezimet.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Kushtezimet.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Kushtezimet.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SSISPaketa\Perditeso"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="Perditeso"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE Aeroportet_abb_NEW 
+SET
+ Aeroporti_abb=?, 
+LinjaAjrore_abb=?, 
+CmimiBiletes_abb=?, 
+idFluturimi_abb=?
+ WHERE 
+id_abb=?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SSISPaketa\Perditeso.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-P1O6CIR.ABB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-P1O6CIR.ABB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].Columns[Aeroporti_abb]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Aeroporti_abb"
+                      externalMetadataColumnId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[Aeroporti_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].Columns[LinjaAjrore_abb]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="LinjaAjrore_abb"
+                      externalMetadataColumnId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[LinjaAjrore_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].Columns[CmimiBiletes_abb]"
+                      cachedDataType="i4"
+                      cachedName="CmimiBiletes_abb"
+                      externalMetadataColumnId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[CmimiBiletes_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].Columns[idFluturimi_abb]"
+                      cachedDataType="i4"
+                      cachedName="idFluturimi_abb"
+                      externalMetadataColumnId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[idFluturimi_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].Columns[id_abb]"
+                      cachedDataType="i4"
+                      cachedName="id_abb"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="i4"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="i4"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="i4"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SSISPaketa\Perditeso.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\SSISPaketa\Perditeso.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Perditeso.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Perditeso.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Perditeso.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Perditeso.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\SSISPaketa\Shto"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Shto"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Aeroportet_abb_NEW]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\SSISPaketa\Shto.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[DESKTOP-P1O6CIR.ABB]"
+                  connectionManagerRefId="Package.ConnectionManagers[DESKTOP-P1O6CIR.ABB]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].Columns[id_abb]"
+                      cachedDataType="i4"
+                      cachedName="id_abb"
+                      cachedSortKeyPosition="1"
+                      externalMetadataColumnId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].ExternalColumns[id_abb]"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[id_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].Columns[Aeroporti_abb]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Aeroporti_abb"
+                      externalMetadataColumnId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].ExternalColumns[Aeroporti_abb]"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[Aeroporti_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].Columns[LinjaAjrore_abb]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="LinjaAjrore_abb"
+                      externalMetadataColumnId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].ExternalColumns[LinjaAjrore_abb]"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[LinjaAjrore_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].Columns[CmimiBiletes_abb]"
+                      cachedDataType="i4"
+                      cachedName="CmimiBiletes_abb"
+                      externalMetadataColumnId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].ExternalColumns[CmimiBiletes_abb]"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[CmimiBiletes_abb]" />
+                    <inputColumn
+                      refId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].Columns[idFluturimi_abb]"
+                      cachedDataType="i4"
+                      cachedName="idFluturimi_abb"
+                      externalMetadataColumnId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].ExternalColumns[idFluturimi_abb]"
+                      lineageId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output].Columns[idFluturimi_abb]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].ExternalColumns[id_abb]"
+                      dataType="i4"
+                      name="id_abb" />
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].ExternalColumns[Aeroporti_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="Aeroporti_abb" />
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].ExternalColumns[LinjaAjrore_abb]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="LinjaAjrore_abb" />
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].ExternalColumns[CmimiBiletes_abb]"
+                      dataType="i4"
+                      name="CmimiBiletes_abb" />
+                    <externalMetadataColumn
+                      refId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input].ExternalColumns[idFluturimi_abb]"
+                      dataType="i4"
+                      name="idFluturimi_abb" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\SSISPaketa\Shto.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\SSISPaketa\Shto.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Shto.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\SSISPaketa\Shto.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\SSISPaketa\Shto.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\SSISPaketa.Paths[E Re]"
+              endId="Package\SSISPaketa\Shto.Inputs[OLE DB Destination Input]"
+              name="E Re"
+              startId="Package\SSISPaketa\Kushtezimet.Outputs[E Re]" />
+            <path
+              refId="Package\SSISPaketa.Paths[Fshije]"
+              endId="Package\SSISPaketa\Fshi.Inputs[OLE DB Command Input]"
+              name="Fshije"
+              startId="Package\SSISPaketa\Kushtezimet.Outputs[Fshi]" />
+            <path
+              refId="Package\SSISPaketa.Paths[Merge Join Output]"
+              endId="Package\SSISPaketa\Kushtezimet.Inputs[Conditional Split Input]"
+              name="Merge Join Output"
+              startId="Package\SSISPaketa\Bashko.Outputs[Merge Join Output]" />
+            <path
+              refId="Package\SSISPaketa.Paths[OLE DB Source Output]"
+              endId="Package\SSISPaketa\Bashko.Inputs[Merge Join Left Input]"
+              name="OLE DB Source Output"
+              startId="Package\SSISPaketa\Aeroportet_abb.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\SSISPaketa.Paths[OLE DB Source Output1]"
+              endId="Package\SSISPaketa\Bashko.Inputs[Merge Join Right Input]"
+              name="OLE DB Source Output"
+              startId="Package\SSISPaketa\Aeroportet_abb_NEW.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\SSISPaketa.Paths[Perditeso]"
+              endId="Package\SSISPaketa\Perditeso.Inputs[OLE DB Command Input]"
+              name="Perditeso"
+              startId="Package\SSISPaketa\Kushtezimet.Outputs[Perditeso]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="132,41.6"
+          Id="Package\SSISPaketa"
+          TopLeft="254.285718616174,123.117648785502" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SSISPaketa">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="180,41.6"
+          Id="Package\SSISPaketa\Aeroportet_abb_NEW"
+          TopLeft="407.896825318434,12.9934638652009" />
+        <NodeLayout
+          Size="100,41.6"
+          Id="Package\SSISPaketa\Shto"
+          TopLeft="122.857144949388,271.470592042567" />
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\SSISPaketa\Kushtezimet"
+          TopLeft="267.857147418722,181.235296659403" />
+        <NodeLayout
+          Size="121.6,41.6"
+          Id="Package\SSISPaketa\Perditeso"
+          TopLeft="485.000008259501,263.058827218713" />
+        <NodeLayout
+          Size="96.8,41.6"
+          Id="Package\SSISPaketa\Fshi"
+          TopLeft="343.571434422415,313.529416161838" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\SSISPaketa\Aeroportet_abb"
+          TopLeft="87.1904763242825,21.8888888078578" />
+        <NodeLayout
+          Size="112,41.6"
+          Id="Package\SSISPaketa\Bashko"
+          TopLeft="280.238100010521,110.542485210448" />
+        <EdgeLayout
+          Id="Package\SSISPaketa.Paths[Perditeso]"
+          TopLeft="367.857147418722,222.835296659403">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="177.942860840779,40.22353055931"
+              Start="0,0"
+              End="177.942860840779,32.72353055931">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.92352980899194" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.92352980899194"
+                    Point2="0,13.9235298089919"
+                    Point3="4,13.9235298089919" />
+                  <mssgle:LineSegment
+                    End="173.942860840779,13.9235298089919" />
+                  <mssgle:CubicBezierSegment
+                    Point1="173.942860840779,13.9235298089919"
+                    Point2="177.942860840779,13.9235298089919"
+                    Point3="177.942860840779,17.9235298089919" />
+                  <mssgle:LineSegment
+                    End="177.942860840779,32.72353055931" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="68.1393991703895,18.9235298089919,41.6640625,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SSISPaketa.Paths[OLE DB Source Output1]"
+          TopLeft="497.896825318434,54.5934638652009">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-144.32539197458,55.9490213452471"
+              Start="0,0"
+              End="-144.32539197458,48.4490213452471">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.0966041760617" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,29.0966041760617"
+                    Point2="0,33.0966041760617"
+                    Point3="-4,33.0966041760617" />
+                  <mssgle:LineSegment
+                    End="-140.32539197458,33.0966041760617" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-140.32539197458,33.0966041760617"
+                    Point2="-144.32539197458,33.0966041760617"
+                    Point3="-144.32539197458,37.0966041760617" />
+                  <mssgle:LineSegment
+                    End="-144.32539197458,48.4490213452471" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SSISPaketa.Paths[OLE DB Source Output]"
+          TopLeft="162.790476324283,63.4888888078578">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="156.114290352905,47.0535964025902"
+              Start="0,0"
+              End="156.114290352905,39.5535964025902">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.8345218156167" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.8345218156167"
+                    Point2="0,27.8345218156167"
+                    Point3="4,27.8345218156167" />
+                  <mssgle:LineSegment
+                    End="152.114290352905,27.8345218156167" />
+                  <mssgle:CubicBezierSegment
+                    Point1="152.114290352905,27.8345218156167"
+                    Point2="156.114290352905,27.8345218156167"
+                    Point3="156.114290352905,31.8345218156167" />
+                  <mssgle:LineSegment
+                    End="156.114290352905,39.5535964025902" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SSISPaketa.Paths[Merge Join Output]"
+          TopLeft="336.047623714622,152.142485210448">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.092811448955"
+              Start="0,0"
+              End="0,21.592811448955">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.592811448955" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SSISPaketa.Paths[Fshije]"
+          TopLeft="335.857147418722,222.835296659403">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56.114287003693,90.694119502435"
+              Start="0,0"
+              End="56.114287003693,83.194119502435">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.3470597512175" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,41.3470597512175"
+                    Point2="0,45.3470597512175"
+                    Point3="4,45.3470597512175" />
+                  <mssgle:LineSegment
+                    End="52.114287003693,45.3470597512175" />
+                  <mssgle:CubicBezierSegment
+                    Point1="52.114287003693,45.3470597512175"
+                    Point2="56.114287003693,45.3470597512175"
+                    Point3="56.114287003693,49.3470597512175" />
+                  <mssgle:LineSegment
+                    End="56.114287003693,83.194119502435" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="18.9682763143465,50.3470597512175,18.177734375,9.7294921875"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SSISPaketa.Paths[E Re]"
+          TopLeft="303.857147418722,222.835296659403">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-131.000002469334,48.635295383164"
+              Start="0,0"
+              End="-131.000002469334,41.135295383164">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,12.8352945557106" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.8352945557106"
+                    Point2="0,16.8352945557106"
+                    Point3="-4,16.8352945557106" />
+                  <mssgle:LineSegment
+                    End="-127.000002469334,16.8352945557106" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-127.000002469334,16.8352945557106"
+                    Point2="-131.000002469334,16.8352945557106"
+                    Point3="-131.000002469334,20.8352945557106" />
+                  <mssgle:LineSegment
+                    End="-131.000002469334,41.135295383164" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-76.106348890917,21.8352945557106,21.2126953125,9.3974609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SSISPaketa\Aeroportet_abb_NEW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SSISPaketa\Shto">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SSISPaketa\Aeroportet_abb">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
